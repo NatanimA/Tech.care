@@ -259,9 +259,9 @@ const History = ({patient}) => {
       console.log(health,"health")
       
     return (
-        <div className="bg-white bg-no-repeat bg-padding-box rounded-2xl opacity-100 h-4/6 p-2">
-                <p className='font-semibold text-2xl leading-8 font-manrope tracking-normal text-blue-dark text-left'>Diagnosis History</p>
-                <div className='w-full my-6  h-3/6 bg-purple-100 bg-no-repeat bg-padding-box rounded-lg opacity-100 flex flex-row gap-8'>
+        <div className="bg-white bg-no-repeat bg-padding-box rounded-2xl opacity-100 h-4/6 p-2 relative">
+                <p className='font-semibold text-2xl leading-8 font-manrope tracking-normal text-blue-dark text-left m-5'>Diagnosis History</p>
+                <div className='w-full my-4  h-3/6 bg-purple-100 bg-no-repeat bg-padding-box rounded-lg opacity-100 flex flex-row'>
                     <div className='flex flex-col w-4/6'>
                         <div className='flex flex-row justify-between my-3'>
                             <p className='font-bold leading-6 font-manrope tracking-normal text-blue-dark text-left capitalize mx-2 text-sm'>Blood Pressure</p>
@@ -304,7 +304,7 @@ const History = ({patient}) => {
                 </div>
 
 
-                <div className='flex flex-row w-full gap-6'>
+                <div className='flex flex-row w-full gap-3 mb-16'>
                 {health.map((health,index) => <Dcard key={index}  health={health} />)}
                 </div>
                 
