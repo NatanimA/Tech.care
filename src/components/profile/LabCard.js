@@ -13,10 +13,6 @@ const LabCard = ({patient}) => {
               <BsDownload />
             </div>
           ))}
-          
-
-          
-
           <div flex-grow={1} /> 
         </div>
       </div>

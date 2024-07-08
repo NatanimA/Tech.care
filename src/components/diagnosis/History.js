@@ -11,8 +11,6 @@ import { useEffect, useState } from 'react';
 const History = ({patient}) => {
     Chart.register(LinearScale);
 
-    console.log(patient,"patient")
-
     const [sys,setSys] = useState({})
     const [dl,setDl] = useState({})
     const [diagnosis,setDiagnosis] = useState([])
@@ -249,14 +247,6 @@ const History = ({patient}) => {
         }
       },[patient])
 
-
-
-     
-
-
-
-
-      console.log(health,"health")
       
     return (
         <div className="bg-white bg-no-repeat bg-padding-box rounded-2xl opacity-100 h-4/6 p-2 relative">
