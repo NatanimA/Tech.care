@@ -82,8 +82,8 @@ const ProfileCard = ({patient}) => {
 
             </div>
 
-            <div className="w-full my-11">
-            <button className="bg-teal-400 rounded-full p-4 mx-24">Show All Information</button>
+            <div className="w-full my-8">
+            <button className="bg-teal-400 rounded-full text-sm p-4 mx-24">Show All Information</button>
             </div>
 
            

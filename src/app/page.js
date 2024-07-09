@@ -24,7 +24,7 @@ export default  async function Home() {
   
   
   return (
-    <main className="w-screen h-full bg-gray-100 bg-no-repeat bg-padding-box opacity-100">
+    <main className="w-screen h-screen justify-center items-center bg-gray-100 bg-no-repeat bg-padding-box opacity-100">
       <Dashboard patients={data} />
     </main>
   );

@@ -1,15 +1,18 @@
 "use client"
 import { Line } from 'react-chartjs-2';
-import { LinearScale } from 'chart.js';
+import { LinearScale,Tooltip } from 'chart.js';
 import Chart from 'chart.js/auto';
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
 import Dcard from './Dcard';
 import { useEffect, useState } from 'react';
+import { FaCaretDown } from "react-icons/fa";
+import { FaCaretUp } from "react-icons/fa6";
 
 
 const History = ({patient}) => {
     Chart.register(LinearScale);
+    Chart.register(Tooltip)
 
     const [sys,setSys] = useState({})
     const [dl,setDl] = useState({})
@@ -249,57 +252,52 @@ const History = ({patient}) => {
 
       
     return (
-        <div className="bg-white bg-no-repeat bg-padding-box rounded-2xl opacity-100 h-4/6 p-2 relative">
-                <p className='font-semibold text-2xl leading-8 font-manrope tracking-normal text-blue-dark text-left m-5'>Diagnosis History</p>
-                <div className='w-full my-4  h-3/6 bg-purple-100 bg-no-repeat bg-padding-box rounded-lg opacity-100 flex flex-row'>
-                    <div className='flex flex-col w-4/6'>
-                        <div className='flex flex-row justify-between my-3'>
-                            <p className='font-bold leading-6 font-manrope tracking-normal text-blue-dark text-left capitalize mx-2 text-sm'>Blood Pressure</p>
-                            <div className='gap-3 flex flex-row mx-10'>
-                                <p className='font-normal text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left'>Last 6 months </p>
-                                <IoIosArrowDown />
-                            </div>
-                            
-                        </div>
-                        <Line data={chartData} options={chartOptions} className='ml-0'  />
-                    </div>
-
-                    <div className='flex flex-col my-3 gap-2'>
-                        <div className='flex flex-row gap-3'>
-                            <div className='w-4 h-4 rounded-lg  bg-pink-500 bg-no-repeat bg-padding-box ' />
-                            <p className=' text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left capitalize'>Systolic</p>
-                        </div>
-                        <div className="font-bold text-lg leading-9 font-manrope tracking-normal text-blue-dark text-left capitalize">{sys.value}</div>
-                        <div className='flex flex-row gap-1'>
-                            {sys.levels === "Higher than Average" && <IoIosArrowUp />}
-                            {sys.levels === "Lower than Average" && <IoIosArrowUp />}
-                            
-                            <p className='font-normal text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left'>{sys.levels}</p>
-                        </div>
-
-                        <div className="border border-gray-300 my-4"></div>
-
-                        <div className='flex flex-row gap-3'>
-                            <div className='w-4 h-4 rounded-lg  bg-purple-500 bg-no-repeat bg-padding-box ' />
-                            <p className=' text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left capitalize'>Diastolic</p>
-                        </div>
-                        <div className="font-bold text-lg leading-9 font-manrope tracking-normal text-blue-dark text-left capitalize">{dl.value}</div>
-                        <div className='flex flex-row gap-1'>
-                        {dl.levels === "Higher than Average" && <IoIosArrowUp />}
-                        {dl.levels === "Lower than Average" && <IoIosArrowUp />}
-                            <p className='font-normal text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left'>{dl.levels}</p>
-                        </div>
-                    </div>
-                    
-                </div>
-
-
-                <div className='flex flex-row w-full gap-3 mb-16'>
-                {health.map((health,index) => <Dcard key={index}  health={health} />)}
-                </div>
-                
-               
+      <div className="bg-white bg-no-repeat bg-padding-box rounded-2xl opacity-100 h-4/6 p-2 relative">
+  <p className="font-semibold text-2xl leading-8 font-manrope tracking-normal text-blue-dark text-left m-5">Diagnosis History</p>
+  <div className="w-full my-4 h-3/6 bg-purple-100 bg-no-repeat bg-padding-box rounded-lg opacity-100 flex flex-row">
+    <div className="flex flex-col w-4/6">
+      <div className="flex flex-row justify-between my-3">
+        <p className="font-bold leading-6 font-manrope tracking-normal text-blue-dark text-left capitalize mx-2 text-sm">Blood Pressure</p>
+        <div className="gap-3 flex flex-row mx-10">
+          <p className="font-normal text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left">Last 6 months</p>
+          <IoIosArrowDown className="my-auto" />
         </div>
+      </div>
+      <Line data={chartData} options={chartOptions} className="ml-0" />
+    </div>
+
+    <div className="flex flex-col my-3 gap-2">
+      <div className="flex flex-row gap-3">
+        <div className="w-4 h-4 rounded-lg bg-pink-500 bg-no-repeat bg-padding-box"></div>
+        <p className="text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left capitalize">Systolic</p>
+      </div>
+      <div className="font-bold text-lg leading-9 font-manrope tracking-normal text-blue-dark text-left capitalize">{sys.value}</div>
+      <div className="flex flex-row gap-1">
+        {sys.levels === "Higher than Average" && <FaCaretUp className="my-auto" />}
+        {sys.levels === "Lower than Average" && <FaCaretDown className="my-auto" />}
+        <p className="font-normal text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left">{sys.levels}</p>
+      </div>
+
+      <div className="border border-gray-300 my-4"></div>
+
+      <div className="flex flex-row gap-3">
+        <div className="w-4 h-4 rounded-lg bg-purple-500 bg-no-repeat bg-padding-box"></div>
+        <p className="text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left capitalize">Diastolic</p>
+      </div>
+      <div className="font-bold text-lg leading-9 font-manrope tracking-normal text-blue-dark text-left capitalize">{dl.value}</div>
+      <div className="flex flex-row gap-1">
+        {dl.levels === "Higher than Average" && <FaCaretUp className="my-auto" />}
+        {dl.levels === "Lower than Average" && <FaCaretDown className="my-auto" />}
+        <p className="font-normal text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left">{dl.levels}</p>
+      </div>
+    </div>
+  </div>
+
+  <div className="flex flex-row w-full gap-3 mb-16">
+    {health.map((health,index) => <Dcard key={index} health={health} />)}
+  </div>
+</div>
+    
     )
 }
 
