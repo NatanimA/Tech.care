@@ -13,9 +13,9 @@ const ProfileCard = ({patient}) => {
             <div className="flex flex-col mx-4 mt-10">
                 <div className="flex flex-row">
                     <div className="bg-transparent bg-gray-300 rounded-lg p-2 bg-no-repeat bg-center bg-padding-box">
-                        <CiCalendarDate  size={30}/>
+                        <Image src={"/BirthIcon.png"} alt="Birth Icon" width={35} height={35} />
                     </div>
-                    <div className="flex flex-col ml-10">
+                    <div className="flex flex-col ml-5">
                         <p className="font-medium text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left capitalize">Date Of Birth</p>
                         <p className="font-bold text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left capitalize">{new Date(patient.date_of_birth).toLocaleDateString("en-US", {
   month: "long",
@@ -30,9 +30,9 @@ const ProfileCard = ({patient}) => {
             <div className="flex flex-col mx-4 mt-6">
                 <div className="flex flex-row">
                     <div className="bg-transparent bg-gray-300 rounded-lg p-2 bg-no-repeat bg-center bg-padding-box">
-                        <CgGenderFemale  size={30}/>
+                    <Image src={"/FemaleIcon.png"} alt="Female Icon" width={35} height={35} />
                     </div>
-                    <div className="flex flex-col ml-10">
+                    <div className="flex flex-col ml-5">
                         <p className="font-medium text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left capitalize">Gender</p>
                         <p className="font-bold text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left capitalize">{patient.gender}</p>
                     </div>
@@ -44,9 +44,9 @@ const ProfileCard = ({patient}) => {
             <div className="flex flex-col mx-4 mt-6" >
                 <div className="flex flex-row">
                     <div className="bg-transparent bg-gray-300 rounded-lg p-2 bg-no-repeat bg-center bg-padding-box">
-                        <MdOutlinePhone  size={30}/>
+                    <Image src={"/PhoneIcon.png"} alt="Phone Icon" width={35} height={35} />
                     </div>
-                    <div className="flex flex-col ml-10">
+                    <div className="flex flex-col ml-5">
                         <p className="font-medium text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left capitalize">Contact Info</p>
                         <p className="font-bold text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left capitalize">{patient.phone_number}</p>
                     </div>
@@ -58,9 +58,9 @@ const ProfileCard = ({patient}) => {
             <div className="flex flex-col mx-4 mt-6">
                 <div className="flex flex-row">
                     <div className="bg-transparent bg-gray-300 rounded-lg p-2 bg-no-repeat bg-center bg-padding-box">
-                        <MdOutlinePhone  size={30}/>
+                    <Image src={"/PhoneIcon.png"} alt="Phone Icon" width={35} height={35} />
                     </div>
-                    <div className="flex flex-col ml-10">
+                    <div className="flex flex-col ml-5">
                         <p className="font-medium text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left capitalize">Emergency Contacts</p>
                         <p className="font-bold text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left capitalize">{patient.emergency_contact}</p>
                     </div>
@@ -72,9 +72,9 @@ const ProfileCard = ({patient}) => {
             <div className="flex flex-col mx-4 mt-6">
                 <div className="flex flex-row">
                     <div className="bg-transparent bg-gray-300 rounded-lg p-2 bg-no-repeat bg-center bg-padding-box">
-                        <PiShieldCheckLight  size={30}/>
+                    <Image src={"/InsuranceIcon.png"} alt="Insurance Icon" width={35} height={35} />
                     </div>
-                    <div className="flex flex-col ml-10">
+                    <div className="flex flex-col ml-5">
                         <p className="font-medium text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left capitalize">Insurance Provider</p>
                         <p className="font-bold text-sm leading-5 font-manrope tracking-normal text-blue-dark text-left capitalize">{patient.insurance_type}</p>
                     </div>
